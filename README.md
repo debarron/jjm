@@ -6,6 +6,7 @@ This is a lerners effort to dig into Python's type hint, it was fun.
 
 ## Under the hood
 This script reciever either a URL or a text file containing URLs.
+
 TL-DR
 - Makes an http-get request to the Jenkins URL
 - Goes through the response HTML using Beautifulsoup

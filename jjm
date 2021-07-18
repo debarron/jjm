@@ -59,6 +59,12 @@ def prettifyRow(info:Tuple[str, str, str, str, str]) -> str:
         statusEmoji = E_GREY_WORKING
     return "  {} \033[1m{} \033[0m {}{} {}{} {} {} ".format(statusEmoji, sessionName, E_SUCCESS, info[2], E_FAIL, info[3], E_DURATION, info[4])
     
+def safeContent(url:str) -> Tuple[bool, str]:
+    try:
+        return (False, requests.get(url).text)
+    except:
+        return (True, "")
+
 
 def processURL(url:str) -> None:
     content: str = requests.get(url).text
